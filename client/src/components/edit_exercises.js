@@ -15,7 +15,7 @@ class EditExercise extends Component {
       duration: 0,
       date: new Date()
     }
-  }
+  };
 
   componentDidMount() {
     axios.get(`/exercises/${this.props.match.params.id}`)
@@ -26,37 +26,14 @@ class EditExercise extends Component {
       duration: response.data.duration,
       date: response.data.date.split("T")[0]
     }))
-  }
+    .catch(err => console.log(err));
+  };
 
-  onChangeUsername = (e) => {
+  onStateChange = e => {
     this.setState({
-      exercise: e.target.value
-    })
-  }
-
-  onChangeDescription = (e) => {
-    this.setState({
-      description: e.target.value
-    })
-  }
-
-  onChangeLevel = (e) => {
-    this.setState({
-      level: e.target.value
-    })
-  }
-
-  onChangeDuration = (e) => {
-    this.setState({
-      duration: e.target.value
-    })
-  }
-  
-  onChangeDate = (date) => {
-    this.setState({
-      date: new Date(date)
-    })
-  }
+      [e.target.name]: e.target.value
+    });
+  };
  
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -70,8 +47,8 @@ class EditExercise extends Component {
     axios.post(`/exercises/update/${this.props.match.params.id}`, exercise)
     .then(() => console.log('Exercise Updated'))
 
-    window.location = "/"
-  }
+    window.location = "/";
+  };
 
 
   render() {
@@ -81,20 +58,20 @@ class EditExercise extends Component {
         <form onSubmit={this.onFormSubmit}>
             <div className="form-group">
             <label>Edit The Username</label>
-            <input type="text" className="form-control"
-             value={this.state.exercise} onChange={this.onChangeUsername} />
+            <input type="text" className="form-control" name="exercise"
+             value={this.state.exercise} onChange={this.onStateChange} />
             <label>Edit The description</label>
-            <input type="text" className="form-control" 
-            value={this.state.description} onChange={this.onChangeDescription} />
+            <input type="text" className="form-control" name="description"
+            value={this.state.description} onChange={this.onStateChange} />
             <label>Edit the Level</label>
-            <input type="text"  className="form-control" 
-            onChange={this.onChangeLevel} value={this.state.level} />
+            <input type="text"  className="form-control" name="level"
+            onChange={this.onStateChange} value={this.state.level} />
             <label>Edit The duration</label>
-            <input type="number" className="form-control"min="1" 
-             value={this.state.duration} onChange={this.onChangeDuration} />
+            <input type="number" className="form-control"min="1" name="Duration"
+             value={this.state.duration} onChange={this.onStateChange} />
           <div className="form-group">
           </div>
-            <DatePicker value={this.state.date} onChange={this.onChangeDate} />
+            <DatePicker value={this.state.date} onChange={this.onStateChange} name="date" />
           </div>
           <div>
             <button type="submit" className="btn btn-primary text-light">Edit Exercise</button>
