@@ -1,0 +1,56 @@
+
+.hide {
+    display: none;
+}
+
+.del-box {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(126, 126, 146, 0.808);
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.del-box button {
+    outline: none;
+    border: none;
+    margin: 5vmin;
+    width: 27vmin;
+    height: 8vmin;
+    background: #232520;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1em;
+    letter-spacing: 3px;
+}
+
+.del-box button:hover {
+    background: rgb(63, 61, 61);
+}
+
+.del-box h5, h4 {
+    color: rgb(117, 0, 0);
+}
+
+hr {
+    border: 1px solid rgba(255, 252, 252, 0.808);
+    width: 100%;
+}
+
+.loading-gif {
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(241, 241, 241);
+    z-index: 99;
+}
+
+

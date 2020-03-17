@@ -1,0 +1,69 @@
+
+.container {
+    margin-bottom: 2vh;
+}
+
+.create-exer-name:nth-child(3) {
+    border: 2px solid rgba(192, 188, 188, 0.301);
+    padding: 1em;
+}
+
+.create-exer-name h3 {
+    text-align: center;
+    font-weight: 300;
+    color: rgb(8, 73, 126);
+    letter-spacing: 1px;
+}
+
+.create-exer-name label {
+    color: rgb(18, 77, 241);
+    font-size: 1.2em;
+}
+
+.lists {
+    overflow-y: scroll;
+    height: 48vh;
+    text-align: center;
+}
+
+.lists .loading-gif-names {
+    width: 35vw;
+    display: inline-block;
+}
+
+.lists .loading-gif-names img {
+    width: 100%;
+}
+
+.exercise-name {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    border-top: 1px solid rgb(134, 132, 132);
+}
+
+.exercise-name p {
+    font-size: 1.5em;
+    font-weight: 350;
+    letter-spacing: 1px;
+    color: rgb(65, 8, 0);
+}
+
+.lists button {
+    width: 150px;
+    height: 38px;
+    margin-left: auto;
+    color: rgb(1, 1, 75);
+    outline: none;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.596);
+    border: 1px solid gray;
+    border-radius: 8px;
+    transition: .5s ease-in-out;
+}
+
+.create-exer-name button:hover {
+    color: rgb(209, 0, 0);
+    border: 2px solid gray;
+}
+

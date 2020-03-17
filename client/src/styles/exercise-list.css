@@ -1,0 +1,86 @@
+
+.exercises-items-cards h2 {
+    color: rgb(42, 110, 165);
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 5vmin;
+}
+
+.exer-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.exer-items .card {
+    display: flex;
+    flex-basis: 1fr 1fr 1fr;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 350px;
+    height: 450px;
+    padding: 20px;
+    margin: 2em 1.5em;
+    border: 1px solid rgb(11, 108, 153);
+}
+
+.exer-items .card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: rgb(5, 103, 128);
+    transform: skew(2deg, 2deg);
+    z-index: -1;
+}
+
+.exercise {
+    text-align: center;
+    font-size: 1.3em;
+    border-bottom: 1px solid rgb(138, 135, 135);
+    transform: translate(0, -2.5em);
+}
+
+.level {
+    color: tomato;
+    font-size: 1.3em;
+}
+
+.description {
+    color: rgb(70, 68, 68);
+}
+
+.duration {
+    font-size: 1.2em;
+    color: rgb(0, 175, 0);
+}
+
+.button {
+    width: 120px;
+    align-self: center;
+    border: 1px solid;
+    text-align: center;
+    color: white;
+}
+
+.edit {
+    margin-top: auto;
+    background: rgb(67, 143, 67);
+}
+
+.edit:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.del {
+    background: rgb(117, 0, 0);
+}
+
+
+
+
+
