@@ -34,6 +34,12 @@ class EditExercise extends Component {
       [e.target.name]: e.target.value
     });
   };
+
+  onDateChange = (date) => {
+    this.setState({
+      date: new Date(date)
+    })
+  };
  
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -71,7 +77,7 @@ class EditExercise extends Component {
              value={this.state.duration} onChange={this.onStateChange} />
           <div className="form-group">
           </div>
-            <DatePicker value={this.state.date} onChange={this.onStateChange} name="date" />
+            <DatePicker value={this.state.date} onChange={this.onDateChange} />
           </div>
           <div>
             <button type="submit" className="btn btn-primary text-light">Edit Exercise</button>
