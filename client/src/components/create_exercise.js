@@ -35,35 +35,11 @@ class CreateExercise extends Component {
         .catch(err => console.log(err));
     };
 
-    onChangeUsername = (e) => {
+    onStateChange = e => {
         this.setState({
-            exercise: e.target.value
-        })
-    };
-
-    onChangedescription = (e) => {
-        this.setState({
-            description: e.target.value
-        })
-    };
-
-    onChangeLevel = (e) => {
-        this.setState({
-            level: e.target.value
-        })
-    };
-
-    onChangeDuration = (e) => {
-        this.setState({
-            duration: e.target.value
-        })
-    };
-
-    onChangeDate = (date) => {
-        this.setState({
-            date: date
-        })
-    };
+            [e.target.name]: e.target.value
+        });
+    }
 
     onSubmitForm = (e) => {
         e.preventDefault();
@@ -94,32 +70,32 @@ class CreateExercise extends Component {
  
           <div className="form-group">
             <label>Exercise Name:</label>
-            <select ref="userInput" className="form-control" required
-               value={this.state.exercise} onChange={this.onChangeUsername}
+            <select ref="userInput" className="form-control" required name="exercise"
+               value={this.state.exercise} onChange={this.onStateChange}
             >
             {this.state.users.map((user, id) => {
                 return <option key={id} value={user}>{user}</option>
             })}
             </select>
             <label>Level:</label>
-            <select className="form-control" onChange={this.onChangeLevel} required>
+            <select className="form-control" onChange={this.onStateChange} name="level" required>
                 <option>Beginner</option>
                 <option>Intermediate</option>
                 <option>Advanced</option>
                 <option>Veteran</option>
             </select>
             <label>Description:</label>
-            <input type="text" className="form-control" required maxLength="125"
-              onChange={this.onChangedescription} value={this.state.description} 
+            <input type="text" className="form-control" required maxLength="125" name="description"
+              onChange={this.onStateChange} value={this.state.description} 
             ></input>
             <label>Duration (in minutes)</label>
-            <input type="number" className="form-control" min="1" required
-               value={this.state.duration} onChange={this.onChangeDuration}
+            <input type="number" className="form-control" min="1" name="duration" required
+               value={this.state.duration} onChange={this.onStateChange}
             ></input>
           </div>
           <label>Date</label>
           <div className="form-group">
-              <DatePicker selected={this.state.date} onChange={this.onChangeDate} />
+              <DatePicker selected={this.state.date} onChange={this.onStateChange} name="date" />
           </div>
           <div className="form-group">
             <input type="submit" value="Submit the Exercise" className="btn btn-primary"/> 
