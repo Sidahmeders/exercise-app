@@ -73,11 +73,11 @@ class EditExercise extends Component {
             <input type="text"  className="form-control" name="level"
             onChange={this.onStateChange} value={this.state.level} />
             <label>Edit The duration</label>
-            <input type="number" className="form-control"min="1" name="Duration"
+            <input type="number" className="form-control"min="1" name="duration"
              value={this.state.duration} onChange={this.onStateChange} />
           <div className="form-group">
           </div>
-            <DatePicker value={this.state.date} onChange={this.onDateChange} />
+            <DatePicker value={this.state.date} onChange={this.onDateChange(this.state.date)} />
           </div>
           <div>
             <button type="submit" className="btn btn-primary text-light">Edit Exercise</button>
