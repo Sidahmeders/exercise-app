@@ -21,7 +21,7 @@ class CreateExercise extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        axios.get('http://localhost:4500/exerciseName')
+        axios.get('/exerciseName')
         .then(response => {
             if(response.data.length > 0) {
                 if(this._isMounted) {
@@ -32,6 +32,7 @@ class CreateExercise extends Component {
                 }
             }
         })
+        .catch(err => console.log(err));
     };
 
     onChangeUsername = (e) => {
@@ -74,7 +75,7 @@ class CreateExercise extends Component {
             Date: this.state.date
         };
 
-        axios.post('http://localhost:4500/exercises/add', exercise)
+        axios.post('/exercises/add', exercise)
         .then(res => console.log(res))
         .catch(err => console.log(err));
 

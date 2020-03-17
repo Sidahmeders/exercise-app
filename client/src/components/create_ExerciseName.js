@@ -26,7 +26,7 @@ class CreateExerciseName extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        axios.get('http://localhost:4500/exerciseName')
+        axios.get('/exerciseName')
         .then(response => {
             this.setState({
                 exercisesListNames: response.data
@@ -49,7 +49,7 @@ class CreateExerciseName extends Component {
       };
       
       if(exerciseName.exercise.length > 3) {
-        axios.post('http://localhost:4500/exerciseName/add', exerciseName)
+        axios.post('/exerciseName/add', exerciseName)
         .then(res => console.log(res))
         this.setState({
             exercise: "",
@@ -63,7 +63,7 @@ class CreateExerciseName extends Component {
 
   deleteExercise = (id) => {
       this.setState({id: id})
-      axios.delete('http://localhost:4500/exerciseName/'+id)
+      axios.delete('/exerciseName/'+id)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
 

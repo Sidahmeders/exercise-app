@@ -18,7 +18,7 @@ class EditExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:4500/exercises/${this.props.match.params.id}`)
+    axios.get(`/exercises/${this.props.match.params.id}`)
     .then(response => this.setState({
       exercise: response.data.exercise,
       description: response.data.description,
@@ -67,7 +67,7 @@ class EditExercise extends Component {
       Duration: this.state.duration,
       Date: this.state.date
     }
-    axios.post(`http://localhost:4500/exercises/update/${this.props.match.params.id}`, exercise)
+    axios.post(`/exercises/update/${this.props.match.params.id}`, exercise)
     .then(() => console.log('Exercise Updated'))
 
     window.location = "/"

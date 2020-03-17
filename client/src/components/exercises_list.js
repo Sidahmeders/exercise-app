@@ -63,7 +63,7 @@ class ExerciseList extends Component {
     }
 
     confirmDelete = () => {
-        axios.delete('http://localhost:4500/exercises/'+this.state.id)
+        axios.delete('/exercises/'+this.state.id)
         .then(response => console.log(response.data))
 
         this.setState({
