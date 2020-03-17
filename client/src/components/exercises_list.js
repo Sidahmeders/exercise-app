@@ -43,7 +43,7 @@ class ExerciseList extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        axios.get('http://localhost:4500/exercises')
+        axios.get('/exercises')
         .then(response => {
             if(this._isMounted) {
                 this.setState({
