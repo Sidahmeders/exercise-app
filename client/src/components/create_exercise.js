@@ -39,7 +39,13 @@ class CreateExercise extends Component {
         this.setState({
             [e.target.name]: e.target.value
         });
-    }
+    };
+
+    onChangeDate = (date) => {
+        this.setState({
+            date: date
+        });
+    };
 
     onSubmitForm = (e) => {
         e.preventDefault();
@@ -95,7 +101,7 @@ class CreateExercise extends Component {
           </div>
           <label>Date</label>
           <div className="form-group">
-              <DatePicker selected={this.state.date} onChange={this.onStateChange} name="date" />
+              <DatePicker selected={this.state.date} onChange={this.onChangeDate} />
           </div>
           <div className="form-group">
             <input type="submit" value="Submit the Exercise" className="btn btn-primary"/> 
