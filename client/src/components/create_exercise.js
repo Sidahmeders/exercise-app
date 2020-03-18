@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
 import axios from 'axios';
-import '../styles/create-exer.css'
+import '../styles/create-exer.css';
 
 
 class CreateExercise extends Component {

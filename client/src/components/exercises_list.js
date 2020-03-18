@@ -39,7 +39,7 @@ class ExerciseList extends Component {
             class: "hide",
             id: ""
         }
-    }
+    };
 
     componentDidMount() {
         this._isMounted = true;
@@ -51,42 +51,43 @@ class ExerciseList extends Component {
                 })
             }
         })
-        .catch(err => console.log(`Error: ${err}`))       
-    }
+        .catch(err => console.log(`Error: ${err}`)); 
+    };
 
     deleteExercise = (id) => {
         this.setState({
             Change: true,
             class: this.state.change ? "hide" : "del-box",
             id: id
-        })
-    }
+        });
+    };
 
     confirmDelete = () => {
         axios.delete('/exercises/'+this.state.id)
         .then(response => console.log(response.data))
+        .catch(err => console.log(err));
 
         this.setState({
             exercises: this.state.exercises.filter(el => el._id !== this.state.id),
             class: "hide"
-        })
-    }
+        });
+    };
 
     cancelDelete = () => {
         this.setState({
             class: "hide"
-        })
-    }
+        });
+    };
 
     exerciseListsItem = () => {
         return this.state.exercises.slice(0).reverse().map(item => {
              return <ExerciseItem exercise={item} deleteExer={this.deleteExercise} key={item._id} />
-         })
-    }
+         });
+    };
 
     componentWillUnmount() {
         this._isMounted = false;
-    }
+    };
 
   render() {
     return (

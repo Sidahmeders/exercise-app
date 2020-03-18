@@ -50,6 +50,7 @@ class EditExercise extends Component {
     }
     axios.post(`/exercises/update/${this.props.match.params.id}`, exercise)
     .then(() => console.log('Exercise Updated'))
+    .catch(err => console.log(err));
 
     window.location = "/";
   };
@@ -75,7 +76,7 @@ class EditExercise extends Component {
              value={this.state.duration} onChange={this.onStateChange} />
           <div className="form-group">
           </div>
-            <DatePicker value={this.state.date} selected={this.state.date} onChange={this.onDateChange} />
+            <DatePicker value={this.state.date} onChange={this.onDateChange} /> 
           </div>
           <div>
             <button type="submit" className="btn btn-primary text-light">Edit Exercise</button>
