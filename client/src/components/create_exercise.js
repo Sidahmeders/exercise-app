@@ -41,13 +41,13 @@ class CreateExercise extends Component {
         });
     };
 
-    onChangeDate = (date) => {
+    onChangeDate = date => {
         this.setState({
             date: date
         });
     };
 
-    onSubmitForm = (e) => {
+    onSubmitForm = e => {
         e.preventDefault();
         const exercise = {
             exercise: this.state.exercise,

@@ -36,12 +36,10 @@ class EditExercise extends Component {
   };
 
   onDateChange = date => {
-    this.setState({
-      date: date
-    });
+    console.log(date)
   };
  
-  onFormSubmit = (e) => {
+  onFormSubmit = e => {
     e.preventDefault();
     const exercise = {
       exercise: this.state.exercise,
