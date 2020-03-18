@@ -23,8 +23,7 @@ class EditExercise extends Component {
       exercise: response.data.exercise,
       description: response.data.description,
       level: response.data.level,
-      duration: response.data.duration,
-      date: response.data.date.split("T")[0]
+      duration: response.data.duration
     }))
     .catch(err => console.log(err));
   };
@@ -36,7 +35,9 @@ class EditExercise extends Component {
   };
 
   onDateChange = date => {
-    console.log(date)
+    this.setState({
+      date: date
+    });
   };
  
   onFormSubmit = e => {
@@ -76,7 +77,7 @@ class EditExercise extends Component {
              value={this.state.duration} onChange={this.onStateChange} />
           <div className="form-group">
           </div>
-            <DatePicker value={this.state.date} onChange={this.onDateChange} /> 
+            <DatePicker selected={this.state.date} onChange={this.onDateChange} /> 
           </div>
           <div>
             <button type="submit" className="btn btn-primary text-light">Edit Exercise</button>
