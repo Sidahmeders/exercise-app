@@ -77,7 +77,7 @@ class EditExercise extends Component {
              value={this.state.duration} onChange={this.onStateChange} />
           <div className="form-group">
           </div>
-            <DatePicker value={this.state.date} onChange={this.onDateChange} />
+            <DatePicker selected={this.state.date} onChange={this.onDateChange} />
           </div>
           <div>
             <button type="submit" className="btn btn-primary text-light">Edit Exercise</button>
