@@ -37,7 +37,7 @@ class EditExercise extends Component {
 
   onDateChange = date => {
     this.setState({
-      date: date
+      date: new Date(date)
     });
   };
  
