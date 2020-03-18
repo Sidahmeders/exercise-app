@@ -35,10 +35,10 @@ class EditExercise extends Component {
     });
   };
 
-  onDateChange = (date) => {
+  onDateChange = (e) => {
     this.setState({
-      date: date
-    })
+      date: e.target.value
+    });
   };
  
   onFormSubmit = (e) => {
