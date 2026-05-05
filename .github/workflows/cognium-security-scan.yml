@@ -10,17 +10,34 @@ on:
 permissions:
   contents: read
   security-events: write
+  models: read
 
 jobs:
-  cognium-ai:
+  cognium-ai-static:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Cognium AI scan
+      - name: Run Cognium AI scan (static)
         uses: cogniumhq/cognium-ai-action@v1
         with:
           mode: static
           path: .
           upload-sarif: "true"
+
+  cognium-ai-llm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Cognium AI scan (LLM-enriched)
+        uses: cogniumhq/cognium-ai-action@v1
+        with:
+          mode: llm
+          path: .
+          upload-sarif: "true"
+          llm-base-url: https://models.github.ai/inference
+          llm-api-key: ${{ github.token }}
+          llm-model: openai/gpt-4o-mini
