@@ -1,0 +1,26 @@
+name: Cognium AI Security Scan
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  cognium-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Cognium AI scan
+        uses: cogniumhq/cognium-ai-action@v1
+        with:
+          mode: static
+          path: .
+          upload-sarif: "true"
